@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import java.io.IOException;
 @Service
 public class ConfigOkHttp {
-    private static final String BASE_URL = "https://www.weavy.com/docs/reference/api/users";
+    private static final String URL = "https://www.weavy.com/docs/reference/api/users";
 
     private final OkHttpClient client = new OkHttpClient();
 
@@ -22,7 +22,7 @@ public class ConfigOkHttp {
         RequestBody body = RequestBody.create(json, MediaType.get("application/json"));
 
         Request request = new Request.Builder()
-                .url(BASE_URL)
+                .url(URL)
                 .post(body)
 
                 .build();
@@ -34,7 +34,7 @@ public class ConfigOkHttp {
 
     public String listUsers() throws IOException {
         Request request = new Request.Builder()
-                .url(BASE_URL)
+                .url(URL)
                 .get()
                 .build();
 
@@ -46,7 +46,7 @@ public class ConfigOkHttp {
 
     public String getUser(String id) throws IOException {
         Request request = new Request.Builder()
-                .url(BASE_URL + "/" + id)
+                .url(URL + "/" + id)
                 .get()
                 .build();
 
@@ -65,7 +65,7 @@ public class ConfigOkHttp {
         RequestBody body = RequestBody.create(json, MediaType.get("application/json"));
 
         Request request = new Request.Builder()
-                .url(BASE_URL + "/" + id)
+                .url(URL + "/" + id)
                 .patch(body)
 
                 .build();
@@ -77,7 +77,7 @@ public class ConfigOkHttp {
 
     public String deleteUser(String id) throws IOException {
         Request request = new Request.Builder()
-                .url(BASE_URL + "/" + id)
+                .url(URL + "/" + id)
                 .delete()
 
                 .build();
