@@ -28,7 +28,7 @@ public class ConfigOkHttp {
                 .build();
 
         try (Response response = client.newCall(request).execute()) {
-            return response.body().string();  // Returns response from Weavy API
+            return response.body().string();
         }
     }
 
@@ -69,7 +69,6 @@ public class ConfigOkHttp {
                 .patch(body)
 
                 .build();
-
         try (Response response = client.newCall(request).execute()) {
             return response.body().string();
         }
@@ -82,7 +81,6 @@ public class ConfigOkHttp {
                 .delete()
 
                 .build();
-
         try (Response response = client.newCall(request).execute()) {
             return response.body().string();
         }
